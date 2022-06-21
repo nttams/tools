@@ -1,0 +1,281 @@
+<html>
+<body>
+<pre>
+<!--EDIT ONLY IN FOLLOWING AREA-->
+<h3>GOLANG</h3>
+hi
+
+<h3>NOTES</h3>
+Test-driven development (TDD)
+
+<h3>BOOKS</h3>
+tôi nói gì khi nói về chạy bộ
+
+<h3>VSCODE</h3>
+workbench.action.terminal.focus
+workbench.action.focusActiveEditorGroup
+
+"editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+},
+
+addin: LiveServer
+
+install on openSUSE
+- sudo zypper ar https://packages.microsoft.com/yumrepos/vscode vscode
+- sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+- sudo zypper refresh
+- sudo zypper install code
+
+<h3>LINUX</h3>
+rename files: for i in lessEnglish_Chapter*;do mv "$i" "${i/lessEnglish_Chapter/''}"; done;
+
+Ctrl + \: split window
+Ctrl + tab: switch windows
+Ctrl + shift + O: explore outline
+
+<h4>STATIC IPs</h4>
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eno1:
+      dhcp4: false
+      dhcp6: false
+     addresses:
+      - 192.168.1.10/24
+     routes:
+      - to: default
+        via: 192.168.1.1
+     nameservers:
+       addresses: [8.8.8.8,8.8.4.4]
+
+<h3>GITHUB</h3>
+git config --get remote.origin.url
+git push -u origin second_branch
+
+1. create a new repository on the command line
+echo "# test_git" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/nttam000/test_git.git
+git push -u origin main
+
+2.push an existing repository from the command line
+git remote add origin https://github.com/nttam000/test_git.git
+git branch -M main
+git push -u origin main
+
+<h4>GIT CACHING</h4>
+git config --global credential.helper cache
+
+<h3>HASHING</h3>
+Characteristics of a good hash function
+- The hash value is fully determined by the data being hashed.
+- The hash function uses all the input data
+- The hash function "uniformly" distributes the data across the entire set of possible hash values.
+- The hash function generates very different hash values for similar strings.
+
+<h3>C++</h3>
+- When using c++ template, remember to add implemenation for that template, otherwise you wil get "undefined reference to..."
+
+<h3>RUST</h3>
+
+<h4>Tips</h4>
+use Vec<u8> as buffer for network reading rather than array
+
+<h4>Expression</h4>
+- Calling a function is an expression.
+- Calling a macro is an expression.
+- A new scope block created with curly brackets is an expression
+- if is an expression
+
+<h4>Stack & Heap</h4>
+All data stored on the stack must have a known, fixed size. Data with an unknown size at compile time or a size that might change must be stored on the heap instead.
+There’s a design choice that’s implied by this: Rust will never automatically create “deep” copies of your data. Therefore, any automatic copying can be assumed to be inexpensive in terms of runtime performance.
+
+<h4>Here are some of the types that implement Copy:</h4>
+- All the integer types, such as u32.
+- The Boolean type, bool, with values true and false.
+- All the floating point types, such as f64.
+- The character type, char.
+- Tuples, if they only contain types that also implement Copy. For example, (i32, i32) implements Copy, but (i32, String) does not.
+
+<h4>Ownership passing to function</h4>
+- datatype does not implement COPY ()
+--> pass whole stack value (it may contain pointer to heap memory that actually contain data)
+--> when the variable goes out of scope, drop() function is called
+--> if variable is already moved (e.g to a function), nothing happens when that variable goes out of scope. It is not valid anymore
+--> drop() and copy() can not be implemented together. Only one of them.
+--> Use reference instead if you don't want to give up ownership of a variable to a function
+
+- datatype does implement COPY () --> pass whole stack value
+
+<h4>Reference</h4>
+- Unlike a pointer, a reference is guaranteed to point to a valid value of a particular type
+- you can have only ONE mutable reference to a particular piece of data at a time
+
+<h4>Debug info</h4>
+- println!("{:?}", rect);
+- println!("{:#?}", rect);
+- with #[derive(Debug)] before the struct defination
+
+<h4>Function and method</h4>
+Associated functions that aren’t methods are often used for constructors that will return a new instance of the struct.
+
+<h4>String</h4>
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+    let s = format!("{}-{}-{}", s1, s2, s3);
+
+<h4>Error handling</h4>
+Rust groups errors into two major categories:
+- recoverable
+- unrecoverable
+
+Rust doesn’t have exceptions. 
+- The type Result<T, E> for recoverable errors 
+- The panic! macro that stops execution when the program encounters an unrecoverable error. 
+
+Result.up_wrap: print the ERR message
+Result.expect: print your own message
+--> using unwrap in multiple places, it can take more time to figure out exactly which unwrap is causing the panic because all unwrap calls that panic print the same message.
+
+<h4>Trait</h4>
+- pub fn notify(item1: &impl Summary, item2: &impl Summary) {
+If we wanted to force both parameters to have the same type:
+-> pub fn notify<T: Summary>(item1: &T, item2: &T) {
+
+<h3>INTERVIEW</h3>
+- Prepare:
++ Tell me about yourself
++ What are you strengths and weaknesses
++ Do you have any question about us?
++ Do mock interviews
++ Practise algorithmns on paper
++ HASH TABLE
++ Remember the key information from the interviewers --> write them down: Big, Not special case, Use real, valid number, string
+
+<h4>INTERVIEW - Steps</h4>
+- Listen
+- Example
+- Bruce force
+- Optimize
++ Trust your brain, let your brain solve the problem naturally, and then reverse-engineer it.
++ Start with simple problem, solve it, then adapt it to orginal problem
++ Base case first (read CTCI)
+- Walk through
+- Implement		Good variable names
+- Test
+
+
+<h4>INTERVIEW 0</h4>
+Mình mới có 1 case interview khá okay nên muốn chia sẻ với mọi người:
+
+1. CV: Thiết kế rõ ràng cụ thể, không quá nhiều graphic, không thêm quá nhiều các thanh đo lường kỹ năng không cần thiết (do không confirm được). Bên cạnh đầu công việc có list cụ thể các achievement. Mục đích của CV mình nghĩ không chỉ là để liệt kê các đầu công việc bạn sẽ làm, vì manager có kinh nghiệm thì đọc qua title sẽ hình dung được bạn đã làm gì. Thêm achievement sẽ rất tốt trên giả định bạn làm được và thành công ở công việc cũ, thì việc bạn làm tốt ở công việc mới là có thể. Rất nhiều CV hiện tại thiếu phần này
+
+2. Phỏng vấn:
+- Join đúng giờ, ready, ngồi thẳng trực diện, đủ ánh sáng, âm thanh rõ >> khá comfortable để trao đổi. Trao đổi xong mới biết bạn vừa về vn và đang trong khu cách ly >> 1 nỗ lực không nhỏ để setup.
+- Có thể trả lời hết tất cả các điểm liên quan trên CV - soft skills và cả achievement. Nắm rất rõ về hồ sơ của mình - checked
+- Có thể summary được công việc bạn apply 1 cách đầy đủ và hoàn chỉnh, nhiều bạn khi được hỏi em sum up công việc mà em đang apply thường lúng túng và không biết làm gì và thiếu sót lên xuống. Hey, nếu em không clear được công việc em đang apply thì sao lại apply, spaming CV?
+- Hiểu về công ty: chưa nắm hết 100% nhưng bù lại bằng cách biết đặt câu hỏi. Đây là phần ứng viên hay fail nhất, vì không hiểu rõ công ty thì đưng bao giờ nói là bạn nghiêm túc với công việc. Again, spaming CVs?
+- Đặt khá nhiều câu hỏi đúng trọng tâm: mình hay hỏi là em có câu hỏi gì không để đánh giá khả năng đặt câu hỏi, kỹ năng đặt câu hỏi tốt cũng là 1 skill rất strong trong việc problem solving nên mình hay test - checked
+- Có khả năng link các skills mình đang có vào công việc và định hướng được phát triển của bản thân & align với công ty về phát triển đôi bên. Bạn chuẩn bị khá kỹ phần này.
+- Thể hiện khả năng học hỏi liên tục qua chia sẽ về sách báo và personal development. Mình nghĩ là manager nào cũng sẽ quan tâm về potential của nhân viên mình, nên đây là điểm tốt để show off
+- Cười nhiều: có nhiều năng lượng tích cực
+- Gửi thank you letter ngay sau khi phỏng vấn với next step.
+Hy vọng các điểm trên sẽ giúp ích được cho các bạn đang xin việc. Mỗi hiring manager sẽ mỗi khác nhưng mình nghĩ cover được hết các điểm trên thì cũng đã ghi điểm khá nhiều rồi. Cố gắng nhé.
+
+<h3>Sayings</h3>
+- Write code that is easy to delete, not easy to extend.
+- done is better than perfect
+- Impatience makes smart people do stupid things
+- Test ideas by experiment and observation. Build on those ideas that pass the test, reject the ones that fail, follow the evidence where ever it leads and question everything.
+
+<h3>VIM</h3>
+:g/^$/d		delete all empty lines
+
+<h3>VIM</h3>
+~/.config/nvim/init.vim
+
+<h3>DATA STRUCTURES</h3>
+<h4>Linked list</h4>
+- Good for inserting and removing element
+- Not good for accessing and sorting
+
+<h4>Binary tree</h4>
+- Good for ordering
+
+<h4>Hash table</h4>
+- Very important
+
+<h4>Tree</h4>
+- Balanced or NOT
+- Binary search tree or NOT
+- Equality (duplicated or NOT)
+- Please be COMFORTABLE with traversal binary tree (in-order, post-order, pre-order)
+
+<h4>Graph</h4>
+- BFS: breadth first search: is NOT recursive
+
+<h3>SOFTWARES</h3>
+- VirtualBox
+- Wireshark
+- NeoVim
+- PostMan
+- VsCode
+- Notepad++
+- FoxitReader
+- git, net-tools, htop, nload
+- MobaXTerm
+- Hercules
+
+<h3>LIST OF MISTAKES</h3>
+- 
+
+<h3>Bucket list</h3>
+<ol>
+<li>Work in Singapore</li>
+<li>Visit Europe</li>
+<li>Travel to all provinces in Vietnam</li>
+<li>Make $100.000/year (currently 2022 $9000)</li>
+<li>Go diving</li>
+<li>Hiking Fanxipan</li>
+<li>Done: Hiking TaNangPhanDung</li>
+<li>...</li> 
+</ol>
+
+
+<h3>File converter</h3>
+ffmpeg -i input.mkv -codec copy output.mp4
+for i in *.mkv; do ffmpeg -i "$i" -codec copy  "${i%.*}.mp4"; done
+
+<h3>APACHE2</h3>
+You'll have to edit
+- /etc/apache2/sites-available/000-default.conf: to change the document root of apache (from /var/www/html/ to whatever you want)
+- /etc/apache2/apache2.conf: to grant permission
+&ltDirectory /&gt
+	Options Indexes FollowSymLinks
+	AllowOverride All
+	Require all denied
+&lt/Directory&gt
+Change it to
+&ltDirectory&gt
+	Options Indexes FollowSymLinks Includes ExecCGI
+	AllowOverride All
+	Require all granted
+&lt/Directory&gt
+- sudo service apache2 restart
+<!--DO NOT GO BEYOND THIS LINE-->
+</pre>
+</body>
+<head>
+	<title>cheatsheet</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+</html>
