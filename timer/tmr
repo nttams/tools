@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+function start_timer() {
+    for (( i = 0; i < $1; i++))
+    do
+        echo "take a break after $(($1 - i))s"
+        sleep 1
+    done
+    xdg-open "/home/tt/Downloads/relax.jpg"
+}
+
+if [ $# -eq 0 ]
+then
+    start_timer 1500
+else
+    start_timer $1
+fi

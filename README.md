@@ -1,3 +1,3 @@
 # cs
 
-This repo contains cheatsheets, maybe commands, tricks, code
+This repo contains cheatsheets, commands, tricks, code

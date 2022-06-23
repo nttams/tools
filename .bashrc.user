@@ -1,0 +1,58 @@
+# copy these lines to $HOME/.bashrc
+# if [ -f $HOME/tools/.bashrc.user ];
+# then
+#     . $HOME/tools/.bashrc.user;
+#     echo ".bashrc.user is included";
+# else
+#     echo ".bashrc.user is NOT found";
+# fi
+
+echo "remember to use tmr to manage your time"
+
+function example_function() {
+    echo "hi $1"
+}
+
+alias vi='vim'
+alias mb='vi ~/tools/.bashrc.user'
+alias sb='source ~/.bashrc'
+alias gitsave='cat ~/.gittoken; git add -A; git commit -m "save"; git push'
+
+# ssh
+alias gopi='ssh pi@192.168.1.200'
+alias gou0='ssh tt@192.168.1.100'
+
+# cheatsheet
+alias cs='vim ~/tools/cs/cs.html'
+alias todo='vim ~/tools/cs/todos.html'
+
+# golang
+export PATH=$PATH:/usr/local/go/bin
+
+# rust
+function disable_rust_warning() {
+    export RUSTFLAGS=$RUSTFLAGS" -A dead_code";
+    export RUSTFLAGS=$RUSTFLAGS" -A unused_imports";
+    export RUSTFLAGS=$RUSTFLAGS" -A unused_mut";
+    export RUSTFLAGS=$RUSTFLAGS" -A unused_variables";
+    export RUSTFLAGS=$RUSTFLAGS" -A dead_code";
+    export RUSTFLAGS=$RUSTFLAGS" -A unused_doc_comments";
+    export RUSTFLAGS=$RUSTFLAGS" -A unused_assignments";
+
+}
+
+function enable_rust_warning() {
+    export RUSTFLAGS="";
+}
+
+alias cc='cargo check;'
+
+function ct() {
+    cargo test $1 -- --show-output;
+}
+
+alias cb='cargo build'
+alias cr='cargo run'
+
+# python
+alias py='python3'

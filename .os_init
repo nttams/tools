@@ -1,0 +1,12 @@
+sudo apt update;
+sudo apt upgrade -y;
+
+# virtual machine
+sudo apt install nload vim curl git net-tools build-essential ranger openssh-server tshark -y;
+
+# host
+sudo apt install nload vim curl git net-tools build-essential ranger openssh-server wireshark virtualbox virtualbox-ext-pack -y;
+
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# pip3 install mpld3
