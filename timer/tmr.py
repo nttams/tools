@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# A simple script to notify that you're using the computer for too long
+
+# This works, but use bash version instead. No need for python
+
 from PIL import Image
 import time
 import sys

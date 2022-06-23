@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# A simple script to notify that you're using the computer for too long
+
 function start_timer() {
     for (( i = 0; i < $1; i++))
     do
