@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="styles.css">
+
 ### COMMANDS
 SHOW DATABASES;
 SHOW TABLES;
@@ -388,6 +390,3 @@ SELECT ROUND(LAT_N, 4) FROM STATION AS XXX WHERE
 LIMIT 1
 ___
 # The end
-
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="styles.css">
+
 ### GOLANG
 hi
 ___
@@ -28,6 +30,12 @@ rename files: for i in lessEnglish_Chapter*;do mv "$i" "${i/lessEnglish_Chapter/
 Ctrl * \: split window  
 Ctrl * tab: switch windows  
 Ctrl * shift * O: explore outline
+
+___
+### HTML/CSS/JS
+* import js at the end of html file
+* import css/less at the begining
+* import less BEFORE js for less
 
 ___
 #### STATIC IPs
@@ -241,6 +249,3 @@ You'll have to edit
 
 ___
 # The end
-
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">

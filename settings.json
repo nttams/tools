@@ -24,4 +24,6 @@
     "editor.suggestSelection": "first",
     "editor.wordBasedSuggestions": false,
     "editor.parameterHints.enabled": false,
+    "html.validate.scripts": false,
+    "html.validate.styles": false
 }
