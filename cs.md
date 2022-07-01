@@ -31,29 +31,41 @@ Ctrl * \: split window
 Ctrl * tab: switch windows  
 Ctrl * shift * O: explore outline
 
+#### nohup [command]
+
+#### STATIC IPs
+network:  
+    version: 2  
+    renderer: networkd  
+    wifis:  
+        wlan0:  
+            access-points:  
+                "name":  
+                    password: "*password"  
+            dhcp4: false  
+            addresses:  
+                    - 192.168.1.100/24  
+            routes:  
+                    - to: default  
+                      via: 192.168.1.1  
+            nameservers:  
+                    addresses: [8.8.8.8,8.8.4.4]  
+    ethernets:  
+        eth0:  
+            dhcp4: false  
+            addresses:  
+                    - 192.168.2.100/24  
+___
+### RASPBERRY
+make ubuntu x64 boots without monitor: hdmi_force_hotplug=1
+___
+### BLENDER
+* shift + A
 ___
 ### HTML/CSS/JS
 * import js at the end of html file
 * import css/less at the begining
 * import less BEFORE js for less
-
-___
-#### STATIC IPs
-network:  
-    version: 2  
-    renderer: networkd  
-    ethernets:  
-    eno1:  
-        dhcp4: false  
-        dhcp6: false  
-        addresses:  
-            - 192.168.1.10/24  
-        routes:  
-            - to: default  
-            via: 192.168.1.1  
-        nameservers:  
-            addresses: [8.8.8.8,8.8.4.4]
-
 ___
 ### GITHUB
 git config --get remote.origin.url  
@@ -65,11 +77,11 @@ git init
 git add README.md  
 git commit -m "first commit"  
 git branch -M main  
-git remote add origin https://github.com/nttam000/test_git.git  
+git remote add origin https://github.com/user/test_git.git  
 git push -u origin main  
 
 #### push an existing repository from the command line  
-git remote add origin https://github.com/nttam000/test_git.git  
+git remote add origin https://github.com/user/test_git.git  
 git branch -M main  
 git push -u origin main
 

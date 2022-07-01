@@ -9,4 +9,7 @@ sudo apt install nload vim curl git net-tools build-essential ranger openssh-ser
 
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# export html from matplotlib
 # pip3 install mpld3
+
+# extension md view for microsoft edge

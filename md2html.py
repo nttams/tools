@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# convert markdown (md) file to html
+
 import json
 import os
 import markdown

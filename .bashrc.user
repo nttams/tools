@@ -23,8 +23,7 @@ alias gopi='ssh pi@192.168.1.200'
 alias gou0='ssh tt@192.168.1.100'
 
 # cheatsheet
-alias cs='vim ~/tools/cs/cs.html'
-alias todo='vim ~/tools/cs/todos.html'
+alias cs='vim ~/tools/cs/cs.md'
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
