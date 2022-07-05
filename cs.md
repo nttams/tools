@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="styles.css">
-
 ### GOLANG
 hi
 ___
@@ -8,7 +6,7 @@ Test-driven development (TDD)
 
 ___
 ### BOOKS
-tôi nói gì khi nói về chạy bộ
+toi noi gi khi noi ve chay bo
 
 ___
 ### VSCODE

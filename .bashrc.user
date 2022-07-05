@@ -18,10 +18,6 @@ alias mb='vi ~/tools/.bashrc.user'
 alias sb='source ~/.bashrc'
 alias gitsave='cat ~/.gittoken; git add -A; git commit -m "save"; git push'
 
-# ssh
-alias gopi='ssh pi@192.168.1.200'
-alias gou0='ssh tt@192.168.1.100'
-
 # cheatsheet
 alias cs='vim ~/tools/cs/cs.md'
 
@@ -52,6 +48,8 @@ function ct() {
 
 alias cb='cargo build'
 alias cr='cargo run'
+
+alias tmr='~/tools/tmr'
 
 # python
 alias py='python3'

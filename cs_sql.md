@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="styles.css">
-
 ### COMMANDS
 SHOW DATABASES;
 SHOW TABLES;

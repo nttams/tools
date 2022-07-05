@@ -1,20 +1,13 @@
 {
     "workbench.sideBar.location": "right",
-    "remote.SSH.remotePlatform": {
-        "pie": "linux",
-        "pi": "linux",
-        "ubuntu0": "linux"
-    },
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
     "explorer.confirmDragAndDrop": false,
-
     "editor.quickSuggestions": {
         "other": false,
         "comments": false,
         "strings": false
     },
-
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.quickSuggestionsDelay": 10,

@@ -8,7 +8,7 @@ function start_timer() {
         echo "take a break after $(($1 - i))s"
         sleep 1
     done
-    xdg-open "/home/tt/Downloads/relax.jpg"
+    xdg-open "/home/$USER/tools/relax.jpg"
 }
 
 if [ $# -eq 0 ]
