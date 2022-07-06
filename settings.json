@@ -18,5 +18,7 @@
     "editor.wordBasedSuggestions": false,
     "editor.parameterHints.enabled": false,
     "html.validate.scripts": false,
-    "html.validate.styles": false
+    "html.validate.styles": false,
+    "explorer.confirmDelete": false,
+    "editor.rulers": [ 100 ]
 }

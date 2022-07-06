@@ -5,7 +5,7 @@ sudo apt upgrade -y;
 sudo apt install nload vim curl git net-tools build-essential ranger openssh-server tshark -y;
 
 # host
-sudo apt install nload vim curl git net-tools build-essential ranger openssh-server wireshark virtualbox virtualbox-ext-pack -y;
+sudo apt install nload vim curl git net-tools build-essential ranger openssh-server wireshark virtualbox virtualbox-ext-pack python3-pip -y;
 
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 

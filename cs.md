@@ -31,7 +31,7 @@ Ctrl * shift * O: explore outline
 
 #### nohup [command]
 
-#### STATIC IPs
+#### static ips
 network:  
     version: 2  
     renderer: networkd  
@@ -53,12 +53,22 @@ network:
             dhcp4: false  
             addresses:  
                     - 192.168.2.100/24  
+
+#### udp
+But let's start with the basics. UDP sockets can be "connected" (or "established") or "unconnected". Connected sockets have a full 4-tuple associated {source ip, source port, destination ip, destination port}, unconnected sockets have 2-tuple {bind ip, bind port}.
+
+Traditionally the connected sockets were mostly used for outgoing flows, while unconnected for inbound "server" side connections.
 ___
 ### RASPBERRY
 make ubuntu x64 boots without monitor: hdmi_force_hotplug=1
 ___
 ### BLENDER
 * shift + A
+___
+### WIRESHARK
+sudo dpkg-reconfigure wireshark-common
+sudo adduser <yourUser> wireshark
+sudo chmod +x /usr/bin/dumpcap
 ___
 ### HTML/CSS/JS
 * import js at the end of html file
