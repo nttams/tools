@@ -1,5 +1,5 @@
 # This program converts subtitle file type SRT to VTT
-# Both are simple, but VTT is native supported by html5
+# Both are simple, but VTT is natively supported by html5
 
 import json
 import os

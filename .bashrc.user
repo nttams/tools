@@ -16,10 +16,9 @@ function example_function() {
 alias vi='vim'
 alias mb='vi ~/tools/.bashrc.user'
 alias sb='source ~/.bashrc'
-alias gitsave='cat ~/.gittoken; git add -A; git commit -m "save"; git push'
 
 # cheatsheet
-alias cs='vim ~/tools/cs/cs.md'
+alias cs='vim ~/tools/cs.md'
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
@@ -33,7 +32,6 @@ function disable_rust_warning() {
     export RUSTFLAGS=$RUSTFLAGS" -A dead_code";
     export RUSTFLAGS=$RUSTFLAGS" -A unused_doc_comments";
     export RUSTFLAGS=$RUSTFLAGS" -A unused_assignments";
-
 }
 
 function enable_rust_warning() {
@@ -44,6 +42,29 @@ alias cc='cargo check;'
 
 function ct() {
     cargo test $1 -- --show-output;
+}
+
+function chex() {
+    str="$1"
+    str="${str^^}"
+    echo -n "0x$str = 0b"
+    echo "obase=2; ibase=16; $str" | bc
+    echo -n "0x$str = "
+    echo "obase=10; ibase=16; $str" | bc
+}
+
+function cdec() {
+    echo -n "$1 = 0b"
+    echo "obase=2; ibase=10; $1" | bc
+    echo -n "$1 = 0x"
+    echo "obase=16; ibase=10; $1" | bc
+}
+
+function cbin() {
+    echo -n "0b$1 = "
+    echo "obase=10; ibase=2; $1" | bc
+    echo -n "0b$1 = 0x"
+    echo "obase=16; ibase=2; $1" | bc
 }
 
 alias cb='cargo build'
